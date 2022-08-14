@@ -1,11 +1,7 @@
 # 欢迎来到 Lean 的 Openwrt 源码仓库
 
-如何编译自己需要的 OpenWrt 固件 [English](./README_EN.md)
+如何编译自己需要的 OpenWrt 固件
 
-## 官方讨论群
-如有技术问题需要讨论或者交流，欢迎加入以下群：
-1. QQ 讨论群： Op固件技术研究群 ,号码 891659613 ，加群链接：[点击加入](https://jq.qq.com/?_wv=1027&k=XL8SK5aC "Op固件技术研究群")
-2. TG 讨论群： OP 编译官方大群 ，加群链接：[点击加入](https://t.me/JhKgAA6Hx1 "OP 编译官方大群")
 
 ## 注意
 
@@ -81,59 +77,3 @@ make V=s -j$(nproc)
 ```bash
 PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
 ```
-
-### macOS 原生系统进行编译
-
-1. 在 AppStore 中安装 Xcode
-
-2. 安装 Homebrew：
-
-   ```bash
-   /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
-   ```
-
-3. 使用 Homebrew 安装工具链、依赖与基础软件包:
-
-   ```bash
-   brew unlink awk
-   brew install coreutils diffutils findutils gawk gnu-getopt gnu-tar grep make ncurses pkg-config wget quilt xz
-   brew install gcc@11
-   ```
-
-4. 然后输入以下命令，添加到系统环境变量中：
-
-   ```bash
-   echo 'export PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"' >> ~/.bashrc
-   echo 'export PATH="/usr/local/opt/findutils/libexec/gnubin:$PATH"' >> ~/.bashrc
-   echo 'export PATH="/usr/local/opt/gnu-getopt/bin:$PATH"' >> ~/.bashrc
-   echo 'export PATH="/usr/local/opt/gnu-tar/libexec/gnubin:$PATH"' >> ~/.bashrc
-   echo 'export PATH="/usr/local/opt/grep/libexec/gnubin:$PATH"' >> ~/.bashrc
-   echo 'export PATH="/usr/local/opt/gnu-sed/libexec/gnubin:$PATH"' >> ~/.bashrc
-   echo 'export PATH="/usr/local/opt/make/libexec/gnubin:$PATH"' >> ~/.bashrc
-   ```
-
-5. 重新加载一下 shell 启动文件 `source ~/.bashrc`，然后输入 `bash` 进入 bash shell，就可以和 Linux 一样正常编译了
-
-## 特别提示
-
-1. 源代码中绝不含任何后门和可以监控或者劫持你的 HTTPS 的闭源软件， SSL 安全是互联网最后的壁垒。安全干净才是固件应该做到的；
-
-2. 想学习 OpenWrt 开发，但是摸不着门道？自学没毅力？基础太差？怕太难学不会？跟着佐大学 OpenWrt 开发入门培训班助你能学有所成
-报名地址：[点击报名](http://forgotfun.org/2018/04/openwrt-training-2018.html "报名")
-
-3. QCA IPQ60xx 开源仓库地址：<https://github.com/coolsnowwolf/openwrt-gl-ax1800>
-
-4. 存档版本仓库地址：<https://github.com/coolsnowwolf/openwrt>
-
-## 软路由介绍
-
-友情推荐不恰饭：如果你在寻找一个低功耗小体积性能不错的 x86 / x64 路由器，我个人建议可以考虑小马v1 的铝合金版本
-(N3710 4千兆)：[页面介绍](https://item.taobao.com/item.htm?spm=a230r.1.14.20.144c763fRkK0VZ&id=561126544764)
-
-![xm1](doc/xm5.jpg) ![xm2](doc/xm6.jpg)
-
-## 捐贈
-
-如果你觉得此项目对你有帮助，可以捐助我们，以鼓励项目能持续发展，更加完善
-
-支付宝 ![alipay](doc/alipay_donate.jpg) 微信 ![wechat](doc/wechat_donate.jpg)
